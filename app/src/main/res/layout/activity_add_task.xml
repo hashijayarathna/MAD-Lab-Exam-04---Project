@@ -16,7 +16,8 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
         android:text="Add Your Task."
-        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textColor="@color/blue2"
         android:textSize="24sp" />
 
     <ImageView
