@@ -8,6 +8,7 @@ import com.example.taskmanagementapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    // Declare variables for data binding, database helper, and task adapter
     private lateinit var binding: ActivityMainBinding
     private lateinit var db: TaskDatabaseHelper
     private lateinit var taskAdapter: TaskAdapter
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.taskRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.taskRecyclerView.adapter = taskAdapter
 
+        // Set click listener for the "Add" button
         binding.addButton.setOnClickListener {
             val intent = Intent(this, AddTaskActivity::class.java)
             startActivity(intent)
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        // Refresh the data when the activity resumes
         taskAdapter.refreshData(db.getAllTask())
     }
 }
